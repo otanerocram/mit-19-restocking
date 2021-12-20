@@ -1,13 +1,13 @@
 # MIT React Excersie - dbCart Shopping Cart
-![GitHub code size](https://img.shields.io/github/repo-size/otanerocram/mit-shopping-cart)
-![GitHub repo stars](https://img.shields.io/github/stars/otanerocram/mit-shopping-cart)
-![GitHub repo forks](https://img.shields.io/github/forks/otanerocram/mit-shopping-cart)
+![GitHub code size](https://img.shields.io/github/repo-size/otanerocram/mit-19-restocking)
+![GitHub repo stars](https://img.shields.io/github/stars/otanerocram/mit-19-restocking)
+![GitHub repo forks](https://img.shields.io/github/forks/otanerocram/mit-19-restocking)
 
 ## Description: 
 Shopping Cart App example to select items from a list to store in another component list
 
 ### See in Action:
-[Code SandBox!](https://githubbox.com/otanerocram/mit-shopping-cart)
+[Code SandBox!](https://githubbox.com/otanerocram/mit-19-restocking)
 
 ## Installation Instructions:
 Download Code, move to your project folder and run `npm install`, then run `npm start`
