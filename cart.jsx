@@ -17,7 +17,7 @@ const useDataApi = (initialUrl, initialData, setItems) => {
   });
   // console.log(`useDataApi called`);
   useEffect(() => {
-    // console.log("useEffect Called");
+    console.log("useEffect Called");
     let didCancel = false;
 
     const fetchData = async () => {
@@ -26,7 +26,8 @@ const useDataApi = (initialUrl, initialData, setItems) => {
         const result = await axios(url);
         console.log("FETCH FROM URl");
         const tempData = result.data.data.map((el, idx) => el.attributes);
-        setItems(tempData);
+        console.log(state.data.data);
+        setItems([...state.data.data,...tempData]);
 
         if (!didCancel) {
           dispatch({ type: "FETCH_SUCCESS", payload: tempData });
@@ -172,21 +173,6 @@ const Products = () => {
             ></input>
           </td>
         </tr>
-        {/* <Card key={index}>
-          <Card.Header>
-            <Accordion.Toggle as={Button} variant="link" eventKey={1 + index}>
-              {item.name}
-            </Accordion.Toggle>
-          </Card.Header>
-          <Accordion.Collapse
-            onClick={() => deleteCartItem(index)}
-            eventKey={1 + index}
-          >
-            <Card.Body>
-              $ {item.cost} from {item.country}
-            </Card.Body>
-          </Accordion.Collapse>
-        </Card> */}
       </>
     );
   });
@@ -211,11 +197,16 @@ const Products = () => {
     return newTotal;
   };
   // TODO: implement the restockProducts function
-  const [reload, setReload] = React.useState(false);
+  
   const restockProducts = (url) => {
     console.log(url)
-    setReload(true);
-
+    doFetch(query)
+    let newItems = data.map((item) => {
+      let { name, country, cost, instock } = item;
+      return { name, country, cost, instock };
+    });
+    setItems([...items, ...newItems]);
+    
   };
 
   return (
