@@ -113,7 +113,7 @@ const Products = () => {
     }
 
     console.log(`add to Cart ${JSON.stringify(item)}`);
-    doFetch(query);
+    // doFetch(query);
   };
 
   const deleteCartItem = (index) => {
@@ -211,13 +211,12 @@ const Products = () => {
     return newTotal;
   };
   // TODO: implement the restockProducts function
+  const [reload, setReload] = React.useState(false);
   const restockProducts = (url) => {
-    doFetch(query);
-  };
+    console.log(url)
+    setReload(true);
 
-  useEffect(() => {
-    // console.log("items");
-  }, [items]);
+  };
 
   return (
     <Container className="pb-4">
@@ -255,7 +254,7 @@ const Products = () => {
                   id="button-addon2"
                   onClick={(e) => {
                     console.log("clic");
-                    restockProducts(`http://localhost:1337/${query}`);
+                    restockProducts(query);
                     e.preventDefault();
                   }}
                 >
